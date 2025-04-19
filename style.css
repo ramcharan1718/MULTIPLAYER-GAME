@@ -1,0 +1,413 @@
+body {
+    background-color: grey;
+    background-image: url('assets/im.avif');
+    background-size: cover;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    border-color: red;
+    font-style: Monospace;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 20px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+#start {
+    background-color: brown;
+    margin-top: 10%;
+}
+
+#start:hover {
+    background-color: darkbrown;
+}
+
+#restart {
+    background-color: blue;
+    display: none;
+    margin-top: 10%;
+}
+
+#restart:hover {
+    background-color: darkblue;
+}
+
+#scoreboard {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5%;
+    color: aliceblue;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: gainsboro;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+.modal button {
+    margin-top: 10px;
+}
+
+#pause {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#pause:hover {
+    background-color: darkred;
+}
+
+#settings {
+    position: absolute;
+    top: 5px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#settings:hover {
+    background-color: darkblue;
+}
+
+#settingsModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: gainsboro;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+#timerDisplay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hand-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+* {
+    font-family: "Optima" !important;
+}
+
+.rock, .paper, .scissor {
+    color: transparent;
+    background-position: center;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.rock {
+    background-image: url(./assets/rock.png);
+}
+
+.paper {
+    background-image: url(./assets/paper.png);
+}
+
+.scissor {
+    background-image: url(./assets/scissor.png);
+}
+
+.rps-label {
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.title {
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+#opponentState {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#player2Choice {
+    height: 100px;
+    color:aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#startGameButton{
+    position:absolute;
+    text-align: center;
+    margin-left: 25%;
+    margin-top:5%;
+    width:50%;
+    height:5%;
+    border-radius:5%;
+    border-style: dashed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#or{
+    color:aliceblue;
+}
+
+#create {
+    display: block !important; 
+}
+
+
+
+#scoreboard {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5%;
+    color:aliceblue;
+}
+
+#you{
+    color:antiquewhite;
+}
+
+#opp{
+    color:antiquewhite;
+}
+
+#resultModal{
+    color:black;
+}
+
+
+#instructions {
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.8); 
+    padding: 15px;
+    left: 0px;
+    top: 500px;
+    height:400px;
+    transform: translateY(-50%);
+    width: 1540px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px; 
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px); 
+    max-height: 100%;
+    overflow-y: auto;
+    background-size: cover;
+    position: fixed;
+z-index: 999;
+#main-content, #createGameButton, #joinGameButton, #or, #roomUniqueId, #rockp, #paperp, #scissorp, #startButton {
+    position: relative;
+    z-index: 1;
+}
+
+}
+
+
+#login{
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.8); 
+    padding: 15px;
+    left: 460px;
+    top: 33%;
+    transform: translateY(-50%);
+    width: 600px; 
+    font-family: 'Arial', sans-serif;
+    font-size: 16px; 
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px); 
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#quit{
+    position:fixed;
+    margin-left: 48%;
+    margin-top:15%;
+}
+
+
+#rock{
+    position:fixed;
+    margin-left:35%;
+}
+
+#paper{
+    position:fixed;
+    margin-left:47%;
+}
+
+#scissors{
+    position:fixed;
+    margin-left:60%;
+}
+
+#scoreboard{
+    position:fixed;
+    margin-left:47%;
+    margin-top:8%;
+}
+
+.messageDiv{
+    background-color:black;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    font-size:1rem;
+    opacity:0;
+    animation:fadeOut 7s forwards;
+}
+
+#profile{
+   position:fixed;
+   margin-left: 1%;
+   
+}
+
+.hidden {
+    display: none;
+  }
+  
